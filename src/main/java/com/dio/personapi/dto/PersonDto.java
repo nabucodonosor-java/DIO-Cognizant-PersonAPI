@@ -37,6 +37,7 @@ public class PersonDto {
         lastName = entity.getLastName();
         cpf = entity.getCpf();
         birthDate = entity.getBirthDate();
+        entity.getPhones().clear();
         entity.getPhones().forEach(phone -> this.phones.add(new PhoneDto(phone)));
     }
 

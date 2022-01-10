@@ -30,8 +30,8 @@ public class PersonService {
     }
 
     @Transactional(readOnly = true)
-    public PersonDto findById(Long idPerson) {
-        Optional<Person> obj = repository.findById(idPerson);
+    public PersonDto findById(Long id) {
+        Optional<Person> obj = repository.findById(id);
         Person entity = obj.orElseThrow(() -> new ResourceNotFoundException("Pessoa não encontrada!"));
         return new PersonDto(entity);
     }
